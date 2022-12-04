@@ -51,9 +51,11 @@ while(true) {
     let continu = prompt('play more?','1-yes,2-no')
     if (continu == 1){
         NBG();
-        break;
     } 
+    else if(continu == 2) {
+        break;
     }
     else{
         alert("you must write 1 or 2")
     }
+}
