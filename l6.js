@@ -1,5 +1,40 @@
+const slider = document.getElementById("myRange");
+const maxWindow = document.querySelector(".max");
+const minus = document.querySelector('.minus');
+const plus  = document.querySelector('.plus');
+const diapason_Alert = document.querySelector('.diapason');
+slider.oninput = function() {
+    maxWindow.innerHTML = slider.value;
+    diapAlert()
+}
+const start = document.getElementById('start')
+start.addEventListener('click',NBG);
+minus.addEventListener('click',sliderminus)
+plus.addEventListener('click',sliderplus)
+
+function sliderminus() {
+    slider.value--;
+    maxWindow.innerHTML = slider.value;
+    diapAlert()
+}
+function sliderplus() {
+    slider.value++;
+    maxWindow.innerHTML = slider.value;
+    diapAlert()
+}
+function diapAlert() {
+    diapason_Alert.innerHTML = `you must guess number from 1 to ${slider.value}`
+}
+
 function NBG(){
-    let diapason = +prompt('enter interval from 2 too ...');
+    let diapason = Number(slider.value)
+    let tries;
+
+    let triesbutton = document.getElementsByName("tries")
+    for(let i=0; i<triesbutton.length;i++) {
+        if (triesButton[i].checed){}
+    }
+
     while (true) {
         if(isNaN(diapason)){
             alert('you must write number');
@@ -9,26 +44,7 @@ function NBG(){
             break;
         }
     }
-
-    alert(`you must вгадати number from 1 to ${diapason}`);
     let RandomNumber = Math.floor(Math.random() * diapason+1);
-    switch (diapason) {
-        case 50:
-            tries=8;
-            break;
-        case 100:
-            tries=9;
-            break;
-        case 200:
-            tries=10;
-            break;
-        case 400:
-            tries=11;
-            break;
-        default:
-            tries=7;
-            break;
-    }
     let number;
     for (let i=1;i<=tries;i++) {
         number = +prompt('what number?')
@@ -43,19 +59,5 @@ function NBG(){
             alert('you win')
             break;
         }
-    }
-}
-let continu; 
-NBG()
-while(true) {
-    let continu = prompt('play more?','1-yes,2-no')
-    if (continu == 1){
-        NBG();
-    } 
-    else if(continu == 2) {
-        break;
-    }
-    else{
-        alert("you must write 1 or 2")
     }
 }

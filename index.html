@@ -4,10 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doc</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="NUMBERS_GAME.css">
 </head>
 <body>
+    <div class="slide-container">
+        <div class="min">1</div>
+        <div class="slide-wraper">
+            <input type="range" id="myRange" class="slide" min="2" max="500" value="250">
+        </div>
+        <div class="max"></div>
+    </div>
     
+    <div class="plus_minus">
+        <a href="#" class="minus">-</a>
+        <a href="#" class="plus">+</a>
+    </div>
+
+    <div class="attention">text</div>
+
+    <div class="tries_group">
+    <input type="radio" name="tries" id="easy" value="15">
+    <label for="easy">easy</label>
+    <input type="radio" name="tries" id="medium" value="10" checked>
+    <label for="medium">medium</label>
+    <input type="radio" name="tries" id="hard" value="5">
+    <label for="hard">hard</label>
+    <input type="radio" name="tries" id="extreme" value="3">
+    <label for="extreme">extreme</label>
+    </div>
+    <button id="start">START</button>
+    <div class="diapason"></div>
 </body>
-<script src="l6.js"></script>
+<script src="Number-game.js"></script>
 </html>
